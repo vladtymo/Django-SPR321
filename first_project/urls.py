@@ -5,6 +5,6 @@ from products import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("about/", views.index),
+    path("home/", views.index),
     path("details/", views.details),
 ]
