@@ -9,13 +9,20 @@
 
 <body>
     <h1>Home Products Page</h1>
-    <p>Hello....aergaer ighliuaerh</p>
+    <p>Title: {{title}}</p>
 
+    {% if tasks|length <= 0 %} 
+    <p>No tasks available</p>
+    {% endif %}
+
+    <p>Tasks: {{tasks | length}}</p>
     <ul>
-        <li>Lorem ipsum dolor sit amet.</li>
-        <li>Nisi iusto voluptate ipsum nulla!</li>
-        <li>Expedita tempore quidem illo illum.</li>
-        <li>Velit ipsum possimus dolor quod.</li>
+        {% for task in tasks %}
+        <li>
+            {{task.title | upper}} : {{task.completed | yesno:"Done,In Progress"}}
+            {{task.deadline | date:"Y-M-d"}}
+        </li>
+        {% endfor %}
     </ul>
 </body>
 
