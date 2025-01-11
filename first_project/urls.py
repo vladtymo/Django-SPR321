@@ -7,4 +7,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("home/", views.index),
     path("details/", views.details),
+    path("delete/<int:id>", views.delete),
 ]

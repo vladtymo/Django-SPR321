@@ -1,0 +1,130 @@
+[
+    {
+        "model": "products.Product",
+        "pk": 1,
+        "fields": {
+            "title": "Wireless Mouse",
+            "price": 25.99,
+            "category": "Electronics",
+            "inStock": true,
+            "image": "https://rukminim2.flixcart.com/image/850/1000/xif0q/mouse/3/1/t/dash-2-4ghz-wireless-bluetooth-5-1-mouse-dual-mode-slim-original-imagvwthxhgxtjt6.jpeg?q=90&crop=false"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 2,
+        "fields": {
+            "title": "Bluetooth Headphones",
+            "price": 59.99,
+            "category": "Electronics",
+            "createdAt": "2023-10-02",
+            "inStock": false,
+            "description": "Noise-cancelling Bluetooth headphones with long battery life.",
+            "image": "https://m.media-amazon.com/images/I/516WC9VNHVL.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 3,
+        "fields": {
+            "title": "Smartphone Stand",
+            "price": 15.99,
+            "category": "Accessories",
+            "createdAt": "2023-10-03",
+            "inStock": true,
+            "description": "Adjustable smartphone stand for desk use.",
+            "image": "https://m.media-amazon.com/images/I/61srjyM7TFL._AC_UF894,1000_QL80_.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 4,
+        "fields": {
+            "title": "USB-C Hub",
+            "price": 29.99,
+            "category": "Accessories",
+            "createdAt": "2023-10-04",
+            "inStock": false,
+            "description": "Multi-port USB-C hub with HDMI and Ethernet.",
+            "image": "https://via.placeholder.com/150"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 5,
+        "fields": {
+            "title": "Portable Charger",
+            "price": 39.99,
+            "category": "Electronics",
+            "createdAt": "2023-10-05",
+            "inStock": true,
+            "description": "High-capacity portable charger for smartphones and tablets.",
+            "image": "https://via.placeholder.com/150"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 6,
+        "fields": {
+            "title": "Wireless Keyboard",
+            "price": 49.99,
+            "category": "Electronics",
+            "createdAt": "2023-10-06",
+            "inStock": false,
+            "description": "Slim wireless keyboard with quiet keys.",
+            "image": "https://via.placeholder.com/150"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 7,
+        "fields": {
+            "title": "Laptop Sleeve",
+            "price": 19.99,
+            "category": "Accessories",
+            "createdAt": "2023-10-07",
+            "inStock": true,
+            "description": "Protective laptop sleeve with soft interior.",
+            "image": "https://via.placeholder.com/150"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 8,
+        "fields": {
+            "title": "External Hard Drive",
+            "price": 79.99,
+            "category": "Electronics",
+            "createdAt": "2023-10-08",
+            "inStock": false,
+            "description": "1TB external hard drive with fast data transfer.",
+            "image": "https://via.placeholder.com/150"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 9,
+        "fields": {
+            "title": "Gaming Mouse Pad",
+            "price": 12.99,
+            "category": "Accessories",
+            "createdAt": "2023-10-09",
+            "inStock": true,
+            "description": "Large gaming mouse pad with non-slip base.",
+            "image": "https://via.placeholder.com/150"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 10,
+        "fields": {
+            "title": "Smartwatch",
+            "price": 199.99,
+            "category": "Electronics",
+            "createdAt": "2023-10-10",
+            "inStock": false,
+            "description": "Feature-rich smartwatch with fitness tracking.",
+            "image": "https://via.placeholder.com/150"
+        }
+    }
+]
