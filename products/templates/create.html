@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h1>Create New Product</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    {% if form.errors %}
+    <div class="alert alert-danger" role="alert">
+        <ul>
+            {% for error in form.errors %}
+            <li>{{error}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <div class="mb-3">
+        <label class="form-label">{{form.title.label}}</label>
+        {{form.title}}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">{{form.price.label}}</label>
+        {{form.price}}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">{{form.description.label}}</label>
+        {{form.description}}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">{{form.inStock.label}}</label>
+        {{form.inStock}}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">{{form.category.label}}</label>
+        {{form.category}}
+    </div>
+    <div class="mb-3">
+        <label class="form-label">{{form.image.label}}</label>
+        {{form.image}}
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
+{% endblock %}

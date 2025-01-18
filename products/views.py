@@ -2,23 +2,30 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from datetime import datetime
 
+from products.forms.forms import ProductForm
 from products.models import Product
 
-# Create your views here.
 def index(request):
-    # return HttpResponse("Hello, world. You're at the products index.")
-
     products = Product.objects.all()
     return render(request, "index.html", { "products": products })
 
-def delete(request, id):
-    product = Product.objects.get(id=id)
+def create(request):
+    if request.method == "GET":
+        form = ProductForm()
+        return render(request, "create.html", { "form": form })
+    
+    form = ProductForm(request.POST)
+    if form.is_valid():
+        form.save()
+        return redirect("/")
 
-    if product is None:
-        return HttpResponse("Product not found", status=404)
+    return render(request, "create.html", { "form": form })
+
+def delete(request, id):
+    product = get_object_or_404(Product, id=id)
     
     product.delete()
-    return redirect("/home")
+    return redirect("/")
 
 def details(request, id):
     product = get_object_or_404(Product, id=id)
