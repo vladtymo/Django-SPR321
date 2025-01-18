@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from datetime import datetime
 
-from products.forms.forms import ProductForm
+from products.forms import ProductForm
 from products.models import Product
 
 def index(request):
@@ -14,7 +14,7 @@ def create(request):
         form = ProductForm()
         return render(request, "create.html", { "form": form })
     
-    form = ProductForm(request.POST)
+    form = ProductForm(request.POST, request.FILES)
     if form.is_valid():
         form.save()
         return redirect("/")
@@ -28,9 +28,13 @@ def edit(request, id):
         form = ProductForm(instance=product)
         return render(request, "edit.html", { "form": form })
     
-    form = ProductForm(request.POST, instance=product)
+    form = ProductForm(request.POST, request.FILES, instance=product)
 
     if form.is_valid():
+
+        if product.imageFile:
+            product.imageFile.delete()
+
         form.save()
         return redirect("/")
 
@@ -39,6 +43,9 @@ def edit(request, id):
 def delete(request, id):
     product = get_object_or_404(Product, id=id)
     
+    if product.imageFile:
+        product.imageFile.delete()
+
     product.delete()
     return redirect("/")
 

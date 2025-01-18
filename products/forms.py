@@ -11,6 +11,7 @@ class ProductForm(forms.ModelForm):
             "price": forms.NumberInput(attrs={"class": "form-control", "placeholder": "Enter price"}),
             "category": forms.TextInput(attrs={"class": "form-control"}),
             "description": forms.Textarea(attrs={"class": "form-control", "rows": 3}),
+            "imageFile": forms.FileInput(attrs={"class": "form-control"}),
             "image": forms.TextInput(attrs={"class": "form-control"}),
             "inStock": forms.CheckboxInput(attrs={"class": "form-check-input"})
         }

@@ -7,7 +7,7 @@
     <div></div>
 </div>
 
-<form method="post">
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
     <div class="mb-3">
@@ -31,8 +31,8 @@
         {{form.category}}
     </div>
     <div class="mb-3">
-        <label class="form-label">{{form.image.label}}</label>
-        {{form.image}}
+        <label class="form-label">{{form.imageFile.label}}</label>
+        {{form.imageFile}}
     </div>
     <div>
         <button type="submit" class="btn btn-primary">Create</button>

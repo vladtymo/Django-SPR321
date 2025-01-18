@@ -8,7 +8,8 @@ class Product(models.Model):
     createdAt = models.DateField(default=datetime.now)
     inStock = models.BooleanField(default=False)
     description = models.TextField(null=True)
-    image = models.CharField(max_length=2083)
+    image = models.CharField(max_length=2083, null=True, blank=True)
+    imageFile = models.ImageField(upload_to="products/", null=True, blank=True)
 
     def __str__(self):
         return self.title
