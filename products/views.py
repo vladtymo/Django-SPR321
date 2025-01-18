@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from datetime import datetime
 
 from products.models import Product
@@ -20,9 +20,7 @@ def delete(request, id):
     product.delete()
     return redirect("/home")
 
-def details(request):
-    return HttpResponse(
-        """<h1>Product Details</h1> 
-        <hr> 
-        <p>Product details page</p>"""
-    )
+def details(request, id):
+    product = get_object_or_404(Product, id=id)
+    
+    return render(request, "details.html", { "item": product })
