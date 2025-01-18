@@ -3,13 +3,11 @@
 {% block content %}
 <div class="card text-center">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <a href="{{request.META.HTTP_REFERER}}" class="btn btn-outline-dark"
-            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-            <i class="bi bi-arrow-left"></i>
-        </a>
+        {% include 'components/back_btn.html' %}
         <span>Product Details</span>
         <div></div>
     </div>
+
     <div class="card-body">
         <div>
             <img class="w-50" src="{{item.image}}" alt="{{item.title}}">

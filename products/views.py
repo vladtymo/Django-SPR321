@@ -21,6 +21,21 @@ def create(request):
 
     return render(request, "create.html", { "form": form })
 
+def edit(request, id):
+    product = get_object_or_404(Product, id=id)
+
+    if request.method == "GET":
+        form = ProductForm(instance=product)
+        return render(request, "edit.html", { "form": form })
+    
+    form = ProductForm(request.POST, instance=product)
+
+    if form.is_valid():
+        form.save()
+        return redirect("/")
+
+    return render(request, "edit.html", { "form": form })
+
 def delete(request, id):
     product = get_object_or_404(Product, id=id)
     
