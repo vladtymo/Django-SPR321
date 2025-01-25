@@ -2,12 +2,17 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from datetime import datetime
 
+from cart.cart import get_cart_size
 from products.forms import ProductForm
 from products.models import Product
 
 def index(request):
     products = Product.objects.all()
     return render(request, "index.html", { "products": products })
+
+def catalog(request):
+    products = Product.objects.all()
+    return render(request, "catalog.html", { "products": products })
 
 def create(request):
     if request.method == "GET":

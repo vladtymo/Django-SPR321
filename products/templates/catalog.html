@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h1>Product Catalog</h1>
+
+<div class="row row-cols-1 row-cols-md-6 g-4 user-catalog">
+    {% for i in products %}
+    <div class="col">
+        <div class="card h-100">
+            {% if i.imageFile %}
+            <img src="{{i.imageFile.url}}" class="card-img-top" alt="{{i.title}}">
+            {% elif i.image %}
+            <img src="{{i.image}}" class="card-img-top" alt="{{i.title}}">
+            {% else %}
+            <img src="https://m.media-amazon.com/images/I/719uMEB4kiL._AC_UF1000,1000_QL80_.jpg" class="card-img-top"
+                alt="...">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{i.title}}</h5>
+                <p class="card-text">{{i.price}}$ - {{user.category}}</p>
+            </div>
+            <div class="card-footer text-center">
+                <a href="/cart/add/{{i.id}}" class="btn btn-primary">
+                    <i class="bi bi-basket"></i>
+                </a>
+                <a class="btn btn-success">
+                    <i class="bi bi-bag"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

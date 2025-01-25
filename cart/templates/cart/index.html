@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1>User Cart</h1>
+
+<ul class="list-group">
+    {% for i in products %}
+    <li class="list-group-item d-flex justify-content-between">
+        <span>{{i.title}} - {{i.price}}$ - {{i.category}} ... </span>
+        <!-- <span class="badge text-bg-primary">{{i.quantity}}</span> -->
+    </li>
+    {% endfor %}
+</ul>
+<div>
+    <a href="clear/" class="btn btn-secondary mt-3">Clear</a>
+</div>
+{% endblock %}
